@@ -17,17 +17,39 @@ in
 
   environment.systemPackages =
     (with pkgs; [
-      # System Packages
+      # terminal
       fastfetch
       neofetch
-      firefox
-      git
-      htop
-      vscode
       zsh
       zsh-autosuggestions
       zsh-syntax-highlighting
       zsh-powerlevel10k
+      htop
+      git
+      tree
+      # guis
+      firefox
+      # ide
+      vscode
+      jetbrains-toolbox
+      # for kvm
+      qemu
+      virt-manager
+      virt-viewer
+      spice
+      spice-gtk
+      spice-protocol
+      # tools
+      ansible
+      postman
+      # dev languages
+      openjdk11
+      # dev languages build tools
+      maven
+      yarn
+      # Containers
+      docker
+      docker-compose
           
     ])
     ++ [
@@ -45,4 +67,9 @@ in
 
   };
 
+    #  resolve issues with Ansible finding its Python interpreter
+  systemd.tmpfiles.rules = [
+    "L+ /usr/libexec/platform-python - - - - ${pkgs.python3Minimal}/bin/python3"
+  ];
+  services.openssh.enable = true;
 }
