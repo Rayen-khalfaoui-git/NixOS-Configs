@@ -27,6 +27,7 @@ in
       htop
       git
       tree
+      gemini-cli
       # guis
       firefox
       # ide
@@ -42,9 +43,10 @@ in
       # tools
       ansible
       postman
-      # dev languages
+      # dev languages runtimes
       openjdk11
-      # dev languages build tools
+      nodejs_20
+      # dev tools
       maven
       yarn
       # Containers

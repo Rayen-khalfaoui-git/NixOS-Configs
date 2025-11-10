@@ -21,6 +21,8 @@ in
         "video" 
         "input" 
         "audio"
+        "docker"
+        "qbittorrent"
       ];
 
     # define user packages here
